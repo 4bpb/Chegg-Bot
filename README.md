@@ -6,3 +6,8 @@
 
  Enter Account Details on lines 46, 47
  Enter Discord Bot Token on line 125
+
+ Features
+ - Device Manager Limit Element Remover
+ - Cookie Login Management
+ - Other useless stuff
