@@ -186,4 +186,4 @@ function makeid(length) {
 }
 
 
-client.login('NjkzOTY5MDAxNzcyMDg5NDE1.XoEy_w.Ztix2sjlm-jee-7D8NXtkYA7ZwM');
+client.login('');
