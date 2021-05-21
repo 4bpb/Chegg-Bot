@@ -110,15 +110,30 @@ client.on('message', message => {
                 }, div_selector_two)
 
                 //question
-                const element_question = await page.$('body > div.chg-body.no-nav.no-subnav.header-nav > div.chg-container.center-content > div.chg-container-content > div.chg-global-content > div > div.parent-container.question-headline > div.main-content.question-page > div.dialog-question > div.question.txt-small > div.txt-body.question-body.mod-parent-container');        // declare a variable with an ElementHandle
-                await element_question.screenshot({path: 'question.png'});
+                try {
+                    const element_question = await page.$('body > div.chg-body.no-nav.no-subnav.header-nav > div.chg-container.center-content > div.chg-container-content > div.chg-global-content > div > div.parent-container.question-headline > div.main-content.question-page > div.dialog-question > div.question.txt-small > div.txt-body.question-body.mod-parent-container');        // declare a variable with an ElementHandle
+                    await element_question.screenshot({path: 'question.png'});
+                } catch (error) {
+                    log('Error on Question Picture','err')
+                }
+
                 //answer
-                const element_answer = await page.$('body > div.chg-body.no-nav.no-subnav.header-nav > div.chg-container.center-content > div.chg-container-content > div.chg-global-content > div > div.parent-container.question-headline > div.main-content.question-page > div.dialog-question > div.answers-wrap > ul > li > div.answer.txt-small.mod-parent-container > div.txt-body.answer-body');        // declare a variable with an ElementHandle
-                await element_answer.screenshot({path: 'answer.png'});
+                try {
+                    const element_answer = await page.$('body > div.chg-body.no-nav.no-subnav.header-nav > div.chg-container.center-content > div.chg-container-content > div.chg-global-content > div > div.parent-container.question-headline > div.main-content.question-page > div.dialog-question > div.answers-wrap > ul > li > div.answer.txt-small.mod-parent-container > div.txt-body.answer-body');        // declare a variable with an ElementHandle
+                    await element_answer.screenshot({path: 'answer.png'});
+                } catch (error) {
+                    log('Error on Answer Picture','err')
+                }
+
 
 
                 //generate pdf
-                await imagesToPdf(["./question.png", "./answer.png"], "./PDFS/"+makeid(10)+".pdf")
+                try {
+                    await imagesToPdf(["./question.png", "./answer.png"],makeid(10)+".pdf")
+                } catch (error) {
+                    log('Error on Generation of PDF','err')
+                }
+
 
 
 
