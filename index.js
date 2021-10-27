@@ -47,7 +47,7 @@ async function checkCookie(){
 async function login(){
     await page.goto("", {waitUntil: 'networkidle2'});
     await page.type('#emailForSignIn', '', {delay: 100}); // Types slower, like a user enter username here
-    await page.type('#passwordForSignIn', '4Craftmine()', {delay: 100}); // Types slower, like a user enter pass here
+    await page.type('#passwordForSignIn', '', {delay: 100}); // Types slower, like a user enter pass here
     await page.click('#eggshell-2 > form > div > div > div > footer > button'); // Types slower, like a user
 }
 
