@@ -45,10 +45,10 @@ async function checkCookie(){
 }
 
 async function login(){
-    await page.goto("", {waitUntil: 'networkidle2'});
+    await page.goto("https://www.chegg.com/auth?action=login&redirect=https%3A%2F%2Fwww.chegg.com%2F", {waitUntil: 'networkidle2'});
     await page.type('#emailForSignIn', '', {delay: 100}); // Types slower, like a user enter username here
     await page.type('#passwordForSignIn', '', {delay: 100}); // Types slower, like a user enter pass here
-    await page.click('#eggshell-2 > form > div > div > div > footer > button'); // Types slower, like a user
+    await page.click('#eggshell-19 > form > div > div > div > footer > button'); // Types slower, like a user
 }
 
 async function useCookie(){
